@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#08090c">
+  <title>Novi Studio</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="brand-mark">N</div><div><strong>Novi Studio</strong><span>Glydex Studio</span></div></div>
+    <div class="top-actions">
+      <button id="runBtn" class="primary" aria-label="Run">▶</button>
+      <button id="menuBtn" class="icon" aria-label="Menu">⋮</button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <section class="editor-shell">
+      <div class="tabs" id="tabs"></div>
+      <div class="editor-toolbar">
+        <button data-action="back">‹</button>
+        <span id="filePath">No file</span>
+        <span class="spacer"></span>
+        <button data-action="search">⌕</button>
+        <button data-action="format">⌘</button>
+        <button data-action="save">●</button>
+      </div>
+      <div class="editor-wrap" id="editorWrap">
+        <div class="gutter" id="gutter"></div>
+        <pre class="highlight" id="highlight" aria-hidden="true"></pre>
+        <textarea id="editor" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" wrap="off"></textarea>
+      </div>
+      <div class="diagnostics" id="diagnostics"></div>
+    </section>
+
+    <section class="bottom-panel hidden" id="bottomPanel">
+      <div class="panel-header"><span id="panelTitle">Console</span><button id="panelClose">×</button></div>
+      <div id="panelBody" class="panel-body"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button data-view="explorer" class="active"><span>□</span><small>Explorer</small></button>
+    <button data-view="search"><span>⌕</span><small>Search</small></button>
+    <button data-view="terminal"><span>›_</span><small>Terminal</small></button>
+    <button data-view="project"><span>◆</span><small>Project</small></button>
+    <button data-view="settings"><span>⚙</span><small>Settings</small></button>
+  </nav>
+
+  <aside class="drawer" id="drawer">
+    <div class="drawer-head"><div><b>Novi Studio</b><small id="appVersion">1.0.0</small></div><button id="drawerClose">×</button></div>
+    <div class="drawer-content">
+      <button data-view="explorer">Explorer</button>
+      <button data-view="search">Search & Replace</button>
+      <button data-view="terminal">Terminal</button>
+      <button data-view="project">Project Manager</button>
+      <button data-view="packages">Packages / Novi Pack</button>
+      <button data-view="debugger">Debugger</button>
+      <button data-view="extensions">Extensions</button>
+      <button data-view="settings">Settings</button>
+      <button data-view="about">About</button>
+    </div>
+  </aside>
+
+  <div class="modal hidden" id="modal">
+    <div class="modal-card"><div class="modal-head"><b id="modalTitle">Novi Studio</b><button id="modalClose">×</button></div><div id="modalBody"></div></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

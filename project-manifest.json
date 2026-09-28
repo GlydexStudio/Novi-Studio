@@ -1,0 +1,23 @@
+{
+  "name": "Novi Studio",
+  "publisher": "Glydex Studio",
+  "version": "1.0.0",
+  "applicationId": "com.glydexstudio.novistudio",
+  "noviLanguagePackage": "novi-language",
+  "noviVersion": "0.1.1",
+  "nodeCompatibility": "Node.js 18.20.4 embedded through nodejs-mobile; npm CLI is not bundled by the supplied native runtime archive.",
+  "webUi": "WebView + local HTML/CSS/JavaScript",
+  "gradle": "AGP 8.11.0 / Gradle 8.14.3 compatible",
+  "compileSdk": 36,
+  "minSdk": 26,
+  "nodeRuntime": {
+    "provider": "nodejs-mobile",
+    "version": "18.20.4",
+    "abis": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "x86_64"
+    ],
+    "jniBridge": true
+  }
+}

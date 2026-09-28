@@ -1,0 +1,11 @@
+{
+  "name": "@glydexstudio/novi-studio-runtime-build",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node build-runtime.js",
+    "test": "npm run build && node test-runtime.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

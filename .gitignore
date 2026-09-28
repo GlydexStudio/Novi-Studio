@@ -1,0 +1,11 @@
+.gradle/
+build/
+app/build/
+.idea/
+*.iml
+local.properties
+.DS_Store
+tools/novi-runtime/dist/
+
+# Local embedded Node runtime state generated during development
+.nodejs-project-state/
