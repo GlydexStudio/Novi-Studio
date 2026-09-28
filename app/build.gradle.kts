@@ -15,13 +15,24 @@ android {
         versionName = "1.0.0"
 
         ndk {
-            abiFilters += listOf("arm64-v8a", "armeabi-v7a", "x86_64")
+            abiFilters += listOf(
+                "arm64-v8a",
+                "armeabi-v7a",
+                "x86_64"
+            )
         }
 
         externalNativeBuild {
             cmake {
-                cppFlags += listOf("-std=c++17", "-fexceptions", "-frtti")
-                arguments += listOf("-DANDROID_STL=c++_shared")
+                cppFlags += listOf(
+                    "-std=c++17",
+                    "-fexceptions",
+                    "-frtti"
+                )
+
+                arguments += listOf(
+                    "-DANDROID_STL=c++_shared"
+                )
             }
         }
     }
@@ -34,6 +45,15 @@ android {
         }
     }
 
-    buildFeatures { buildConfig = true }
-    packaging { resources.excludes += "/META-INF/{AL2.0,LGPL2.1}" }
+    buildFeatures {
+        buildConfig = true
+    }
+
+    packaging {
+        resources.excludes += "/META-INF/{AL2.0,LGPL2.1}"
+    }
+}
+
+dependencies {
+    implementation("com.google.android.material:material:1.13.0")
 }
