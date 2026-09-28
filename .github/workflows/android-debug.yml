@@ -31,17 +31,14 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
-
-      - name: Install Android build tools
-        shell: bash
-        run: |
-          yes | sdkmanager --licenses >/dev/null || true
-          sdkmanager --install \
-            "platform-tools" \
-            "platforms;android-36" \
-            "build-tools;35.0.0" \
-            "cmake;${ANDROID_CMAKE_VERSION}" \
-            "ndk;${ANDROID_NDK_VERSION}"
+        with:
+          packages: >-
+            platform-tools
+            platforms;android-36
+            build-tools;35.0.0
+            cmake;3.22.1
+            ndk;27.0.12077973
+          accept-android-sdk-licenses: true
 
       - name: Set up Gradle 8.14.3
         uses: gradle/gradle-build-action@v3
@@ -58,3 +55,4 @@ jobs:
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 14
+          
